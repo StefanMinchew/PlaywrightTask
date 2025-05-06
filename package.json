@@ -1,0 +1,45 @@
+{
+  "name": "pwdemo",
+  "version": "1.0.0",
+  "description": "Playwright end-to-end test automation task with Allure reporting and CI setup.",
+  "scripts": {
+    "pw:e2e": "playwright test --project=chromium",
+    "pw:e2e:firefox": "playwright test --project=firefox",
+    "pw:e2e:webkit": "playwright test --project=webkit",
+    "pw:debug": "playwright test --debug",
+    "pw:report": "playwright show-report",
+    "pw:e2e:headed": "playwright test --project=chromium --headed",
+    "allure:generate": "npx allure-commandline generate allure-results --clean",
+    "allure:open": "allure open allure-report",
+    "lint": "eslint . --fix",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "Stefan Minchev",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^20.11.10",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "allure-commandline": "^2.33.0",
+    "allure-playwright": "^3.2.1",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.23.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "typescript-eslint": "^8.29.0"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix",
+    "*.{js,ts,tsx}": "prettier --write"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.7.0"
+  }
+}
